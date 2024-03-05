@@ -1,15 +1,16 @@
 import React from 'react';
-
 import './App.css';
+import HomeScreen from './HomeScreen';
 
 function App() {
   return (
     <div className="app">
-      <header className="App-header">
-        <h1>Hello</h1>
-      </header>
+      
+        <HomeScreen />
+      
     </div>
   );
 }
 
 export default App;
+
