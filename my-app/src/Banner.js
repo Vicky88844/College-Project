@@ -30,7 +30,6 @@ function Banner() {
           this is a test passage
           this is a test passage
           this is a test passage` , 150)
-          
         }
 
 
