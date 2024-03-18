@@ -52,13 +52,6 @@ console.log(movie);
         }
 
 
-
-
-
-
-
-
-
       </h1>
     </div>
     <div className='banner--fadebutton' />
