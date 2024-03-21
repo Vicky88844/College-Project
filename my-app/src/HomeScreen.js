@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from "./Banner";
 import "./HomeScreen.css";
 import Nav from "./Nav";
-import requests from './Request';
+import requests from "./Request";
 import Row from "./Row";
 function HomeScreen() {
   return (
@@ -17,11 +17,7 @@ function HomeScreen() {
 
 
 
-       <Row 
-        title='NETFLIX ORIGINALS'
-        fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow
-       />
+       <Row title='NETFLIX ORIGINALS' fetchUrl={requests.fetchNetflixOriginals} isLarge />
        <Row title='Top Rated' fetchUrl={requests.fetchTopRated} />
        <Row title='Action Movies' fetchUrl={requests.fetchActionMovies}/>
        <Row title='Comedy Movies' fetchUrl={requests.fetchComedyMovies}/>
