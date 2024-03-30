@@ -1,13 +1,28 @@
 .loginscreen{
     position: relative;
     height: 100%;
-
+    background: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg") 
+    center no-repeat;
+    background-size: cover;
+}
+.loginscreen-gradient{
+    width: 100%;
+    z-index: 1;
+    height: 100vh;
+    background: rgba(0, 0,0.4);
 }
 
 .loginscreen-button{
     position: fixed;
     right: 20px;
     top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
 }
 
 .loginscreen-logo{

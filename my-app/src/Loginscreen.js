@@ -10,8 +10,9 @@ function Loginscreen() {
         src={LOGO}>
        </img>
        <button className='loginscreen-button'>
-        
-        Sign in</button>
+           Sign In</button>
+
+         <div className='loginscreen-gradient' />  
         </div>
     </div>
   )
