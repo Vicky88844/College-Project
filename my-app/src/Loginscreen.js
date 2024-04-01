@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Loginscreen.css'
 import LOGO from"./logo/LOGO.png"
 function Loginscreen() {
+  const [ signIn , setSignIn ]=useState(false)
   return (
     <div className='loginscreen'>
         <div className='loginscreen-background'>
@@ -9,7 +10,8 @@ function Loginscreen() {
         className='loginscreen-logo' alt=''
         src={LOGO}>
        </img>
-       <button className='loginscreen-button'>
+       <button onClick={() => setSignIn(true)}
+        className='loginscreen-button'>
            Sign In</button>
 
          <div className="loginscreen-gradient" />  
@@ -24,6 +26,16 @@ function Loginscreen() {
               create or restart your
               membership. 
             </h3>
+            <div className='loginscreen-input'>
+              <form>
+                <input type='email'placeholder='Email 
+                Address'/>
+                <button onClick={() => setSignIn(true)}
+                 className='loginscreen-getstarted'>
+                  GET STARTED
+                </button>
+              </form>
+            </div>
           </>
         </div>
     </div>
