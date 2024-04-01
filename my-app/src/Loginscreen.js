@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Loginscreen.css'
 import LOGO from"./logo/LOGO.png"
+import SignUpScreen from './SignUpScreen'
 function Loginscreen() {
   const [ signIn , setSignIn ]=useState(false)
   return (
@@ -17,7 +18,11 @@ function Loginscreen() {
          <div className="loginscreen-gradient" />  
         </div>
         <div className='loginscreen-body'>
-          <>
+          {signIn ? 
+          (
+            <SignUpScreen />
+          ): (
+            <>
           <h1>Unlimited films, Tv programmes and
           more.</h1>
             <h2>Watch anywhere. Cancel at any time.</h2> 
@@ -37,6 +42,8 @@ function Loginscreen() {
               </form>
             </div>
           </>
+          )}
+          
         </div>
     </div>
   )
