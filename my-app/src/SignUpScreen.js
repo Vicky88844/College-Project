@@ -1,53 +1,38 @@
-import React, { useRef } from 'react'
-import './SignUpScreen.css';
-import { auth } from './firebase';
-function SignUpScreen() { 
-  const emailRef=useRef(null);
-  const passwordRef=useRef(null);
+import React, { useState } from "react";
+import "./SignUpScreen.css";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./firebase";
 
- const register = (e) => {
-  e.preventDefault();
+const SignUpScreen = () => {
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
 
-  auth 
-  .createUserWithEmailAndPassword(
-    emailRef.current.value,
-    passwordRef.current.value
-  )
-  .then((authUser) => {
-    console.log(authUser);
+const register = (e) => {
+e.preventDefault();
+createUserWithEmailAndPassword(auth, email, password)
+.then((authUser) => {
+console.log(authUser);
+})
+.catch((err) => {
+alert(err.message);
+});
+};
+return (
+<div className="signupScreen">
+<form>
+<h1>Sign In</h1>
+<input value={email} placeholder="Email" type="email" onChange={e=>setEmail(e.target.value)} />
+<input value={password} placeholder="Password" type="password" onChange={e=>setPassword(e.target.value)} />
+<button type="submit">Sign In</button>
 
-  })
-  .catch((error) => {
-    alert(error.message);
-  });
- };
- 
- const signIn = (e) => {
-  e.preventDefault();
-  auth.signInWithEmailandPassword(
-    emailRef.current.value,
-    passwordRef.current.value
-  ).then((authUser) => {
-    console.log(authUser);
-
-  }).catch((error) => alert(error.message));
- };
-  
-  return (
-    <div className='signupScreen'>
-    <form>
-    <h1>Sign In</h1>
-    <input ref={emailRef} placeholder='Email' type='email'/>
-          <input ref={passwordRef} placeholder='Password' type='password' />
-          <button type='submit'onClick={register}>Sign In</button>
-          <h4>
-           <span className='signupScreen-grey'> New to Movieverse? </span>
-           <span className='signupScreen-link'onClick={signIn}>Sign Up now</span>
-           
-           </h4>
-      </form>
-             </div>
-  )
-}
-
-export default SignUpScreen
+<h4>
+<span className="signupScreen-gray">New to Netflix? </span>
+<span className="signupScreen-link" onClick={register}>
+Sign up Now
+</span>
+</h4>
+</form>
+</div>
+);
+};
+export default SignUpScreen;
