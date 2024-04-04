@@ -22,7 +22,7 @@ const ProfileScreen =() => {
         <div className='profilescreen-details'>
             <h2>{user.email}</h2>
             <div className='profilescreen-plans'>
-                <h3>Plans</h3>
+                <h3></h3>
                 {/*plan*/}
                 <button className='profilescreen-signout' onClick={logout}>Sign Out</button>
                 {""}

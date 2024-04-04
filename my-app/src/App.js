@@ -39,7 +39,7 @@ useEffect(()=>{
         {!user ? (
           <Loginscreen />
         ) : (
-          <Routes>
+        <Routes>
             <Route path="/profile" element={<ProfileScreen />}/>
             <Route path="/" element={<HomeScreen />}/>
           </Routes>
