@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
-import {BrowserRouter as Router,Switch,Route}
+import {BrowserRouter as Router,Routes,Route}
 from "react-router-dom";
 import {useSelector,useDispatch} from "react-redux";
 import Loginscreen from './Loginscreen';
@@ -9,6 +9,7 @@ import { login, logout, selectUser } from './features/counter/userSlice';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import ProfileScreen from './screens/ProfileScreen';
+
 
 
 
@@ -38,16 +39,11 @@ useEffect(()=>{
         {!user ? (
           <Loginscreen />
         ) : (
-          <Switch>
-            <Route path='/profile'>
-              <ProfileScreen />
-            </Route>
-          <Route exact path ="/">
-            <HomeScreen />
-          </Route>
-        </Switch>
+          <Routes>
+            <Route path="/profile" element={<ProfileScreen />}/>
+            <Route path="/" element={<HomeScreen />}/>
+          </Routes>
         )}
-        
       </Router>
     </div>
   );
