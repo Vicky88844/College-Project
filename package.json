@@ -12,7 +12,8 @@
     "axios": "^1.6.8",
     "css-loader": "^6.10.0",
     "firebase": "^10.10.0",
-    "react-router-dom": "^5.2.0",
+    "react-player": "^2.15.1",
+    "react-router-dom": "^5.3.4",
     "react-youtube": "^10.1.0",
     "style-loader": "^3.3.4"
   },
