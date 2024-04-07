@@ -25,7 +25,7 @@ function App() {
       }
     });
     return unsubscribe;
-  }, [dispatch]); // dispatch is now included in the dependency array
+  }, [dispatch]); 
 
   return (
     <div className="app">
